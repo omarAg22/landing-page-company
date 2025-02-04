@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className={`container ${sticky && "dark-nav"}`}>
       <p className="logo">Kadir Technologies</p>
-      <ul className={!mobileMenu && "hide-mobile-menu"}>
+      <ul className={`mobile-menu ${!mobileMenu ? "hide-mobile-menu" : ""}`}>
         <li>
           <Link to="hero" smooth={true} offset={0} duration={500}>
             Home
