@@ -6,13 +6,15 @@ const Hero = () => {
   return (
     <div className="hero container">
       <div className="hero-text">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+        <h1>Innovate – Secure – Transform.</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ex
-          minima autem qui quos recusandae vitae reprehenderit dolorum iusto
-          officia, dolorem mollitia sequi error quas aliquam harum nisi
-          explicabo, facilis vel neque eveniet eligendi. Adipisci officia odit
-          illo consequuntur! Reiciendis.
+          At <strong>Kadir Technologies</strong>, we empower businesses with
+          cutting-edge IT solutions, seamless CRM/ERP integrations, and robust
+          cybersecurity services. Our expertise drives digital transformation,
+          ensuring efficiency, security, and growth. Plus, with{" "}
+          <strong>Maxe</strong>, our all-in-one convenience app, we bring smart
+          technology to everyday life. Partner with us to future-proof your
+          business and stay ahead in the digital era.
         </p>
         <Link
           className="btn"

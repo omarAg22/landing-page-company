@@ -38,28 +38,32 @@ const Contact = () => {
     <div className="contact">
       <div className="contact-col">
         <h3>
-          Send us a message <img src={msg_icon} alt="" />
+          Send Us a Message <img src={msg_icon} alt="" />
         </h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure animi
-          corporis aspernatur itaque sequi laborum minima saepe magni quisquam
-          assumenda natus ab sit, rerum dicta? Sint nemo dolorum architecto
-          officia, perspiciatis dolore.
+          Have questions or need assistance? <strong>Kadir Technologies</strong>{" "}
+          is here to help! Whether you&#39;re looking for{" "}
+          <strong>
+            IT solutions, CRM/ERP services, cybersecurity expertise, or details
+            about our Maxe app
+          </strong>
+          , our team is ready to assist you. Reach out to us, and we’ll get back
+          to you as soon as possible.
         </p>
         <ul>
           <li>
             {" "}
             <img src={mail_icon} alt="" />
-            Contact@gmail.com
+            contact@kadir.ma
           </li>
           <li>
             <img src={phone_icon} alt="" />
-            0102030405
+            +212 679 834 100
           </li>
           <li>
             <img src={location_icon} alt="" />
-            88-Ave France Rabat-agdal <br />
-            MA 023147
+            LOT 10, Jadid 5, Hay Iziki, Marrakech, <br />
+             40000, Morocco
           </li>
         </ul>
       </div>

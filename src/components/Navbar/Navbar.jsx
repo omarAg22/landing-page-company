@@ -1,60 +1,68 @@
 import React, { useEffect, useState } from "react";
-import "./Navbar.css";
-import logo from "../../assets/joomla.png";
-import menu_icon from "../../assets/menu-icon.png";
 import { Link } from "react-scroll";
+import menu_icon from "../../assets/menu-icon.png";
+import "./Navbar.css";
+
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 50 ? setSticky(true) : setSticky(false);
-    });
-  }, []);
+    const handleScroll = () => {
+      setSticky(window.scrollY > 50);
+    };
 
-  const [mobileMenu, setMobileMenu] = useState(false);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);
-    // mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
+    // Add body scroll lock when menu is open
+    document.body.style.overflow = !mobileMenu ? "hidden" : "unset";
   };
+
+  const closeMenu = () => {
+    setMobileMenu(false);
+    document.body.style.overflow = "unset";
+  };
+
+  const navItems = [
+    { to: "hero", label: "Home", offset: 0 },
+    { to: "program", label: "Services", offset: -260 },
+    { to: "about", label: "About us", offset: -150 },
+    { to: "contact", label: "Contact us", offset: -150, isButton: true },
+  ];
+
   return (
-    <nav className={`container ${sticky && "dark-nav"}`}>
-      <p className="logo">Kadir Technologies</p>
-      <ul className={`mobile-menu ${!mobileMenu ? "hide-mobile-menu" : ""}`}>
-        <li>
-          <Link to="hero" smooth={true} offset={0} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="program" smooth={true} offset={-260} duration={500}>
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link to="about" smooth={true} offset={-150} duration={500}>
-            About us
-          </Link>
-        </li>
-        <li>
-          <Link to="testionials" smooth={true} offset={-260} duration={500}>
-            Testimonials
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="contact"
-            smooth={true}
-            offset={-260}
-            duration={500}
-            className="btn"
-          >
-            Contact us
-          </Link>
-        </li>
-      </ul>
-      <img className="menu-icon" src={menu_icon} alt="" onClick={toggleMenu} />
+    <nav className={`navbar ${sticky ? "navbar-sticky" : ""}`}>
+      <div className="navbar-container">
+        <p className="navbar-logo">Kadir Technologies</p>
+
+        <img
+          src={menu_icon}
+          alt="Toggle menu"
+          className="menu-icon"
+          onClick={toggleMenu}
+        />
+
+        <ul className={`navbar-menu ${mobileMenu ? "show" : ""}`}>
+          {navItems.map((item) => (
+            <li key={item.to} className="navbar-item">
+              <Link
+                to={item.to}
+                smooth={true}
+                offset={item.offset}
+                duration={500}
+                className={item.isButton ? "navbar-button" : "navbar-link"}
+                onClick={closeMenu}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
