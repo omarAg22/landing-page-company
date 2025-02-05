@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="hero container">
       <div className="hero-text">
-        <h1>Innovate – Secure – Transform.</h1>
+        <h1>Innovate – Secure – Transform</h1>
         <p>
           At <strong>Kadir Technologies</strong>, we empower businesses with
           cutting-edge IT solutions, seamless CRM/ERP integrations, and robust
