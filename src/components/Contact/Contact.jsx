@@ -44,8 +44,7 @@ const Contact = () => {
           Have questions or need assistance? <strong>Kadir Technologies</strong>{" "}
           is here to help! Whether you&#39;re looking for{" "}
           <strong>
-            IT solutions, CRM/ERP services, cybersecurity expertise, or details
-            about our Maxe app
+            IT solutions, CRM/ERP services, Cybersecurity Expertise
           </strong>
           , our team is ready to assist you. Reach out to us, and we’ll get back
           to you as soon as possible.
@@ -63,11 +62,12 @@ const Contact = () => {
           <li>
             <img src={location_icon} alt="" />
             LOT 10, Jadid 5, Hay Iziki, Marrakech, <br />
-             40000, Morocco
+            40000, Morocco
           </li>
         </ul>
       </div>
       <div className="contact-col">
+        <p className="contact-us">Contact Us</p>
         <form onSubmit={onSubmit}>
           <label>Your name</label>
           <input
